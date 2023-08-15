@@ -3,6 +3,7 @@ import './Header.css';
 import ubisoftLogo from '../../res/images/svg/ubisoft-logo.svg';
 import searchIcon from '../../res/images/svg/search-icon.svg';
 import userIcon from '../../res/images/user-icon.png';
+import xIcon from '../../res/images/svg/x-icon.svg';
 import dropDownIcon from '../../res/images/svg/dropdown-icon.svg';
 import useWindowSize from '../../hooks/useWindowSize';
 import { useEffect, useRef, useState } from 'react';
@@ -50,9 +51,15 @@ export default function Header() {
                         <img src={ubisoftLogo} />
                     </a> :
                         <div id='mobile-nav-btn' onClick={() => setIsMobileNavVisible(prev => !prev)}>
-                            <div className='dot' />
-                            <div className='dot' />
-                            <div className='dot' />
+                            {
+                                !isMobileNavVisible ? <div id='mobile-dots-holder'>
+                                    <div className='dot' />
+                                    <div className='dot' />
+                                    <div className='dot' />
+                                </div> : <div id='mobile-dots-holder'>
+                                    <img className='exit-btn' src={xIcon} />
+                                </div>
+                            }
                         </div>
 
                 }
