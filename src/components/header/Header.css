@@ -17,6 +17,8 @@
 
     position: sticky;
     top: 0;
+
+    z-index: 1000;
 }
 
 .header-part {
@@ -27,18 +29,20 @@
     min-width: fit-content;
 }
 
+.header-part:nth-child(1) img {
+    user-select: none;
+    cursor: pointer;
+}
+
 /* Nav Part */
 .header-part:nth-child(2) {}
 
 .header-part:nth-child(2) ul {
     display: flex;
     align-items: center;
-
-    height: 100%;
 }
 
 .header-part:nth-child(2) ul .header-navlink {
-    height: 100%;
     display: flex;
     align-items: center;
 
@@ -95,6 +99,7 @@
 .header-part:nth-child(3) .header-right-icon:nth-child(1) img {
     background: #1D1D1D;
     border-radius: 50px;
+    user-select: none;
 }
 
 .header-part:nth-child(3) .header-right-icon:nth-child(2) img {
@@ -187,6 +192,7 @@
 
 .mobile-navlink-front img {
     width: 15px;
+
 }
 
 .mobile-navlink-sub-container {

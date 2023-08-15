@@ -43,13 +43,18 @@ export default function Header() {
         )
     });
 
+
+    const handleLogoClick = () => {
+        window.location.assign('/');
+    }
+
     return (
         <header id="header" className={isMobile && 'mobile'}>
             <div className='header-part'>
                 {
-                    !isMobile ? <a href='#'>
-                        <img src={ubisoftLogo} />
-                    </a> :
+                    !isMobile ?
+                        <img src={ubisoftLogo} onClick={handleLogoClick} />
+                        :
                         <div id='mobile-nav-btn' onClick={() => setIsMobileNavVisible(prev => !prev)}>
                             {
                                 !isMobileNavVisible ? <div id='mobile-dots-holder'>
@@ -72,9 +77,7 @@ export default function Header() {
                         <li className='header-navlink'>EXPLORE</li>
                         <li className='header-navlink'>HELP</li>
                     </ul> :
-                        <a href='#'>
-                            <img src={ubisoftLogo} />
-                        </a>
+                        <img src={ubisoftLogo} onClick={handleLogoClick} />
                 }
             </div>
             <div className='header-part'>

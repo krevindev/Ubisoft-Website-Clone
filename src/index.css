@@ -23,6 +23,8 @@ code {
   margin: 0;
   padding: 0;
   list-style: none;
+  outline: none;
+  border: none;
 
   -webkit-tap-highlight-color: transparent;
 }
